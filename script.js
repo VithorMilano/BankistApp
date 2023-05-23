@@ -204,7 +204,7 @@ const startLogOutTimer = function () {
   };
 
   // Set time to 2 minutes
-  let time = 120;
+  let time = 15;
 
   // Call the timer every second
   tick();
@@ -352,6 +352,12 @@ btnClose.addEventListener("click", function (e) {
 
     // Hide UI
     containerApp.style.opacity = 0;
+    
+    // Change the message
+    labelWelcome.textContent = `${currentAccount.owner}, your account has been successfully deleted`;
+
+    // Stop timer
+    clearInterval(timer);
   }
 
   inputCloseUsername.value = inputClosePin.value = "";
